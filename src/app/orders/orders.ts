@@ -27,6 +27,6 @@ export class Orders {
   }
 
   getOrderDetails(o: any) {
-
+    this.router.navigateByUrl("/order-details/"+o.id)
   }
 }
