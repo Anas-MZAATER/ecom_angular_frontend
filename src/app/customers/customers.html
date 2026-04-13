@@ -1,0 +1,23 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (customers){
+        <table class="table table-striped">
+          <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Actions</th></tr></thead>
+          <tbody>
+            @for (c of customers._embedded.customers; track $index){
+              <tr>
+                <td>{{c.id}}</td>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>
+                  <button class="btn btn-success" (click)="getOrders(c)">orders</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    </div>
+  </div>
+</div>
