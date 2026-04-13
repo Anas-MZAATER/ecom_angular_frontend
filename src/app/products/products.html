@@ -1,0 +1,21 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (products){
+        <table class="table table-striped">
+          <thead><tr><th>ID</th><th>Name</th><th>Price</th><th>Qte</th></tr></thead>
+          <tbody>
+            @for (p of products._embedded.products; track p.id){
+              <tr>
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.quantity}}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    </div>
+  </div>
+</div>
